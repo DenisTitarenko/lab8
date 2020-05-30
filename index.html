@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Lab8</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <!-- загрузка скрипта игры -->
+    <script type="text/javascript">
+        var n = 4; // размер поля
+        createField(n, n);
+        function initGame() { // инициализация игры
+            createField(n, n); // создание игрового поля
+        }
+    </script>
+</head>
+<body style="display: flow; justify-content: center" onload="initGame();">
+<div id="wrapper">
+    <form onsubmit="checkData(); return false;">
+        <h3>Для регистрации необходимо указать ваши персональные данные</h3>
+        <div id="ques">
+            <p><label><sup>*</sup> Имя</label></p> <br>
+            <p><label>Организация (компания)</label></p> <br>
+            <p><label>Телефон</label></p> <br>
+            <p><label><sup>*</sup> Адрес эл.почты</label></p>
+        </div>
+        <div id="answ">
+            <input type="text" name="username" id="username"> <br>
+            <input type="text" name="company" id="com"> <br>
+            <input type="text" name="phone" id="phone"> <br>
+            <input type="text" name="usermail" id="email">
+        </div>
+        <div id="but">
+            <button value="send" name="sendbtn" type="submit">Отправить</button>
+            <button value="clear" name="clearbtn" type="clear">Очистить</button>
+        </div>
+        <span><sup>*</sup> - поля обязательные для заполнения</span>
+        <br><span id="warning"></span>
+    </form>
+</div>
+<br> <br> <br> <br> <br> <br>
+<div style="display: flex; justify-content: center" id="game"></div>
+</body>
+</html>
